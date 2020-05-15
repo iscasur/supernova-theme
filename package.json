@@ -1,0 +1,21 @@
+{
+    "name": "supernova-contable",
+    "description": "Un tema para un blog contable",
+    "version": "0.0.1",
+    "engines": {
+        "ghost": ">=3.0.0",
+        "ghost-api": "v3"
+    },
+    "author": {
+        "name": "Israel Castro",
+        "email": "israel.castro@gmail.com"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "config": {
+        "posts_per_page": 3
+    }
+}
