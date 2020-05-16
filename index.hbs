@@ -1,12 +1,13 @@
 {{!< default}}
 
-<main>
-
-    <!-- for each one of the post, display the title-->
-    {{#foreach posts}}
-        <h1><a href="{{url}}">{{title}}</a></h1>
-    {{/foreach}}
-
+<main class="container">
+    <div class="columns is-multiline">
+        {{#foreach posts}}
+            <div class="column is-half is-centered">
+                {{> post-card}}
+            </div>
+        {{/foreach}}
+    </div>
 </main>
 
 <!-- Pagination block -->

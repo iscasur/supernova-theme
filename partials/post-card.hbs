@@ -1,0 +1,54 @@
+<article class="card">
+
+    {{#if feature_image}}
+    <div class="card-image">
+        <figure class="image is-4by3">
+            <img src="{{img_url feature_image}}" alt="{{title}}">
+        </figure>
+    </div>
+    {{/if}}
+
+    <div class="card-content">
+        <a class="post-card-content-link" href="{{url}}">
+            <h2 class="title is-4">{{title}}</h2>
+        </a>
+        <div class="content">
+            {{#if feature_image}}
+                <p>{{excerpt words="30"}}</p>
+            {{else}}
+                <p>{{excerpt words="44"}}</p>
+            {{/if}}
+        </div>
+        <footer>
+            <ul class="author-list">
+                {{#foreach authors}}
+                    <li class="author-list-item">
+                        <div class="author-name-tooltip">
+                            {{name}}
+                        </div>
+                        {{#if profile_image}}
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <a href="{{url}}"><img src="{{profile_image}}" alt="{{name}}" /></a>
+                                    </figure>
+                                </div>
+                            </div>
+                        {{else}}
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <a href="{{url}}">{{> "icons/avatar"}}</a>
+                                    </figure>
+                                </div>
+                            </div>
+                        {{/if}}
+                    </li>
+                {{/foreach}}
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-date">{{#if primary_tag}}{{#primary_tag}}{{name}}{{/primary_tag}}{{/if}} <span class="bull">&bull;</span> <time datetime="{{date format="DDD-MM-YYYY"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+            </div>
+        </footer>
+    </div>
+</article>
