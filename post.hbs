@@ -1,12 +1,23 @@
-{{#post}}
+{{!< default}}
 
+{{#post}}
     <article>
-        <header>
-            <h1>{{title}}</h1>
+        <header class="post__background-image container" style="background-image: url({{feature_image}});">
+            <div class="post__background-image-text">
+                <h1 class="title has-text-white">{{title}}</h1>
+                <time class="subtitle has-text-white">
+                    {{date format="YYYY MMMM DD"}}
+                </time>
+            </div>
         </header>
-        <section>
-            {{content}}
+        <section class="container">
+            <div class="content">
+                {{content}}
+            </div>
         </section>
+        {{#if @labs.members}}
+            {{> subscribe-form}}
+        {{/if}}
     </article>
 
 {{/post}}
